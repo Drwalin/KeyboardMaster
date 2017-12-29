@@ -32,3 +32,7 @@ KM #file# #args#
 	solution rounded to integer number.
 
 
+# I am using:
+	gconio.h by Piotr He³ka (piotr.helka@nd.e-wro.pl)
+
+
