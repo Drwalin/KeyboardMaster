@@ -198,7 +198,7 @@ int main( int argc, char ** argv )
 			GetString( printString, correctForm, cooldown, changeLetters );
 			Clear();
 			gotoxy( 10, 10 );
-			printf( "\"%s\"", printString.c_str() );
+			printf( "%s", printString.c_str() );
 			gotoxy( 10, 11 );
 			//printf( "\"%s\"", correctForm.c_str() );
 			acceptTimeTo = GetTime() + cooldown;
@@ -294,6 +294,7 @@ bool IsPolite( std::string& str )
 	if( ContainWord( str, "lesb" ) )		return false;
 	if( ContainWord( str, "69" ) )			return false;
 	if( ContainWord( str, "porn" ) )		return false;
+	if( ContainWord( str, "pedo" ) )		return false;
 	
 	if( ContainWord( str, "gei" ) )			return false;
 	if( ContainWord( str, "gej" ) )			return false;
@@ -383,7 +384,8 @@ void GetString( std::string & output, std::string & input, int & ms, bool change
 	int i, j, k, l, a, b, c;
 	char * str = new char[1024];
 	__GetStringBegin__OF__Function_:
-	switch( 3 )//rand() % 10 )
+		output = "";
+	switch( rand() % 10 )
 	{
 	case 0:
 	case 1:
@@ -393,8 +395,8 @@ void GetString( std::string & output, std::string & input, int & ms, bool change
 		if( dictionary.size() )
 		{
 			i = 1;
-			output = dictionary[rand()%dictionary.size()];
-			while( i < 2 )//rand() % 3 == 0 )
+			output += dictionary[rand()%dictionary.size()];
+			while( rand() % 3 == 0 )
 			{
 				++i;
 				output += " ";
@@ -404,7 +406,6 @@ void GetString( std::string & output, std::string & input, int & ms, bool change
 		}
 		else
 		{
-			output = "";
 			k = ( rand() % 5 ) + 3;
 			for( i = 0; i < k; ++i )
 				output += (char)((rand()%('~'-' '))+' ');
@@ -426,16 +427,19 @@ void GetString( std::string & output, std::string & input, int & ms, bool change
 		}
 		
 		input = output;
+		output = "\"" + output + "\"";
 		break;
 		
 	case 4:
 	case 5:
-		output = "";
 		k = ( rand() % 5 ) + 3;
 		for( i = 0; i < k; ++i )
 			output += (char)((rand()%('~'-' '))+' ');
 		input = output;
 		ms = 4000 + (input.size()*1000);
+		
+		output = "\"" + output + "\"";
+		
 		break;
 		
 	case 6:
