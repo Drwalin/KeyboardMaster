@@ -14,16 +14,16 @@
 
 
 # How to run:
-KM #file# #args#
-#file# - file with containing some words, if file not exist
-(or file not entered) program then will use default "dictionary.txt"
-#args# possibilities:
-	.f - fast load dictionary, do not checking words polite-level
-	.c - enable random changing capital - lower case letters
-	.nc - disable random changing capital - lower case letters
-	.l - use time limit for typing
-	.nl - do not use time limit for typing
-	.elven - use ase dictionary file "elvenNames.txt"
+	KM #file# #args#
+	#file# - file with containing some words, if file not exist
+	(or file not entered) program then will use default "dictionary.txt"
+	#args# possibilities:
+		.f - fast load dictionary, do not checking words polite-level
+		.c - enable random changing capital - lower case letters
+		.nc - disable random changing capital - lower case letters
+		.l - use time limit for typing
+		.nl - do not use time limit for typing
+		.elven - use ase dictionary file "elvenNames.txt"
 
 
 # How to use:
